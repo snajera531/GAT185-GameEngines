@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 5;
-
-    void Start()
-    {
-        
-    }
+    [Range(0, 10)][Tooltip("speed of the player")] public float speed = 5;
+    [SerializeField] AudioSource audioSource;
 
     void Update()
     {
@@ -19,5 +15,17 @@ public class Player : MonoBehaviour
         direction.z = Input.GetAxis("Vertical");
 
         transform.position += direction * Time.deltaTime * speed;
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            audioSource.Play();
+            GetComponent<Renderer>().material.color = Color.green;
+        }
+
+        GameObject gO = GameObject.Find("Cube");
+        if(gO)
+        {
+            gO.GetComponent<Renderer>().material.color = Color.magenta;
+        }
     }
 }
