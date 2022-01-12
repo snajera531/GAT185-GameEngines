@@ -18,14 +18,14 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            audioSource.Play();
+            audioSource?.Play();
             GetComponent<Renderer>().material.color = Color.green;
         }
 
-        GameObject gO = GameObject.Find("Cube");
+        /*GameObject gO = GameObject.Find("Cube");
         if(gO)
         {
             gO.GetComponent<Renderer>().material.color = Color.magenta;
-        }
+        }*/
     }
 }
