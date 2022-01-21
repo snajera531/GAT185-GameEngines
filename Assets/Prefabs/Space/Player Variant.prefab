@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 496639639809208262, guid: f735c677d54f667488e8a23551eeaaf3, type: 3}
-  spawnTransform: {fileID: 0}
-  fireRate: 0
+  spawnTransform: {fileID: 8281193346016270174}
+  fireRate: 2
   weaponType: Fire1
 --- !u!114 &5415539392814320714
 MonoBehaviour:
@@ -146,19 +146,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
---- !u!114 &7013233051343119658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4085982696302320018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f47f126b4b700d49a45d237d1eeed53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1169261860770638, guid: acba20e0ba98c7c49a26f32b5fbb662a, type: 3}
-  spawnTransform: {fileID: 0}
-  fireRate: 0
-  weaponType: Fire2

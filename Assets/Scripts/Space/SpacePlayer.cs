@@ -16,5 +16,7 @@ public class SpacePlayer : MonoBehaviour
         //applying movement
         transform.Translate(direction * speed * Time.deltaTime);
         //transform.position += direction * Time.deltaTime * speed;
+
+
     }
 }
