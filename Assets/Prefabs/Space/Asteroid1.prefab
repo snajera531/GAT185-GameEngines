@@ -106,3 +106,16 @@ MonoBehaviour:
   deathPrefab: {fileID: 7948615552424718202, guid: 642910edac9a52b44af15f2261d9c9b9, type: 3}
   destroyOnDeath: 1
   maxHealth: 10
+--- !u!114 &4251372271786381971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019892705835154921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1d764e02b6ce946a681d3f66a89f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 100

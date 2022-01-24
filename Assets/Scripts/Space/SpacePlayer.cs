@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpacePlayer : MonoBehaviour
+public class SpacePlayer : MonoBehaviour, IDestructable
 {
     [Range(0, 100)] [Tooltip("speed of the player")] public float speed = 40;
+    [SerializeField] string weaponType;
 
     void Update()
     {
@@ -17,6 +18,14 @@ public class SpacePlayer : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime);
         //transform.position += direction * Time.deltaTime * speed;
 
+        if (Input.GetButton(weaponType))
+        {
+            GetComponent<Weapon>().Fire();
+        }
+    }
 
+    public void Destroyed()
+    {
+        //GameManager.Instance.OnStopGame();
     }
 }

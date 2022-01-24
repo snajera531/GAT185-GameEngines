@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
-using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager>
 	[SerializeField] GameObject playerPrefab;
 	[SerializeField] Transform playerSpawn;
 	[SerializeField] GameObject titleScreen;
-	[SerializeField] TMP_Text scoreUI;
+	[SerializeField] Text scoreUI;
 
 	public delegate void GameEvent();
 
@@ -39,7 +39,9 @@ public class GameManager : Singleton<GameManager>
 	{
 		state = State.GAME;
 		titleScreen.SetActive(false);
-		startGameEvent();
+
+		Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
+		startGameEvent?.Invoke();
 	}
 
 	public void OnStartTitle()
@@ -48,5 +50,4 @@ public class GameManager : Singleton<GameManager>
 		titleScreen.SetActive(true);
 		stopGameEvent();
 	}
-
 }
