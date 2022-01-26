@@ -22,7 +22,7 @@ public class SpaceEnemy : MonoBehaviour, IDestructable
         if(timer <= 0)
         {
             timer = Random.Range(minFireTime, maxFireTime);
-            weapon.Fire();
+            weapon?.Fire();
         }
     }
 

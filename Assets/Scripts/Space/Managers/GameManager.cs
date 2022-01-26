@@ -5,49 +5,80 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-	enum State
-	{
-		TITLE,
-		GAME
-	}
+    enum State
+    {
+        TITLE,
+        GAME
+    }
 
-	[SerializeField] GameObject playerPrefab;
-	[SerializeField] Transform playerSpawn;
-	[SerializeField] GameObject titleScreen;
-	[SerializeField] Text scoreUI;
+    [SerializeField] GameObject playerPrefab;
+    [SerializeField] Transform playerSpawn;
+    [SerializeField] GameObject titleScreen;
+    [SerializeField] Text scoreUI;
+    [SerializeField] Text livesUI;
+    [SerializeField] Slider healthSlider;
 
-	public delegate void GameEvent();
+    public float PlayerHealth { set { healthSlider.value = value; } }
 
-	public event GameEvent startGameEvent;
-	public event GameEvent stopGameEvent;
+    public delegate void GameEvent();
 
-	int score = 0;
-	State state = State.TITLE;
+    public event GameEvent startGameEvent;
+    public event GameEvent stopGameEvent;
 
-	public int Score
-	{
-		get { return score; }
-		set
-		{
-			score = value;
-			scoreUI.text = score.ToString();
-		}
-	}
-	public int Lives { get; set; }
+    int score = 0;
+    int lives = 0;
+    State state = State.TITLE;
 
-	public void OnStartGame()
-	{
-		state = State.GAME;
-		titleScreen.SetActive(false);
+    public int Score
+    {
+        get { return score; }
+        set
+        {
+            score = value;
+            scoreUI.text = score.ToString();
+        }
+    }
 
-		Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
-		startGameEvent?.Invoke();
-	}
+    public int Lives
+    {
+        get { return score; }
+        set
+        {
+            score = value;
+            scoreUI.text = score.ToString();
+        }
+    }
 
-	public void OnStartTitle()
-	{
-		state = State.TITLE;
-		titleScreen.SetActive(true);
-		stopGameEvent();
-	}
+    public void OnStartGame()
+    {
+        state = State.GAME;
+        Score = 0;
+        Lives = 3;
+
+        titleScreen.SetActive(false);
+
+        Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
+        startGameEvent?.Invoke();
+    }
+
+    public void OnStartTitle()
+    {
+        state = State.TITLE;
+        titleScreen.SetActive(true);
+        stopGameEvent();
+    }
+
+    public void OnPlayerDeath()
+    {
+        //if(lives <= 0)
+        //      {
+
+        //      }
+        //      else
+        {
+            Lives--;
+            livesUI.text = "LIVES: " + Lives;
+            Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
+        }
+    }
 }
