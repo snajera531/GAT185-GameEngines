@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 447062}
   - component: {fileID: 19825392}
   - component: {fileID: 19954730}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4773,7 +4773,7 @@ GameObject:
   - component: {fileID: 461546}
   - component: {fileID: 19867036}
   - component: {fileID: 19956808}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9535,7 +9535,7 @@ GameObject:
   - component: {fileID: 427960}
   - component: {fileID: 3362166}
   - component: {fileID: 2342514}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ship_1_Engines 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9617,7 +9617,7 @@ GameObject:
   - component: {fileID: 3359834}
   - component: {fileID: 2370292}
   - component: {fileID: 6404340}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ship_1_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9718,7 +9718,7 @@ GameObject:
   - component: {fileID: 3942088760913025091}
   - component: {fileID: 7754892186723083474}
   - component: {fileID: 4119037431001753408}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ship_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9738,6 +9738,8 @@ Transform:
   m_Children:
   - {fileID: 464138}
   - {fileID: 3178731449801932443}
+  - {fileID: 1562619179132750377}
+  - {fileID: 7914798336461622202}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9784,8 +9786,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f47f126b4b700d49a45d237d1eeed53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 496639639809208262, guid: f735c677d54f667488e8a23551eeaaf3, type: 3}
-  spawnTransform: {fileID: 3178731449801932443}
+  projectilePrefab: {fileID: 496639639809208262, guid: 2135ddd3982f96843afeb3c1111f6e5b, type: 3}
+  spawnTransforms:
+  - {fileID: 3178731449801932443}
+  - {fileID: 1562619179132750377}
+  - {fileID: 7914798336461622202}
   fireRate: 0
 --- !u!114 &3942088760913025091
 MonoBehaviour:
@@ -9799,9 +9804,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84bc0ab6d283d00408cfb621a41b58cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 0}
+  deathPrefab: {fileID: 7948615552424718202, guid: 642910edac9a52b44af15f2261d9c9b9, type: 3}
   destroyOnDeath: 1
-  maxHealth: 50
+  maxHealth: 100
 --- !u!114 &7754892186723083474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9837,7 +9842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 450296}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9878,7 +9883,7 @@ GameObject:
   - component: {fileID: 480182}
   - component: {fileID: 19882012}
   - component: {fileID: 19989056}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14640,7 +14645,7 @@ GameObject:
   - component: {fileID: 428748}
   - component: {fileID: 19851972}
   - component: {fileID: 19970600}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19403,7 +19408,7 @@ GameObject:
   - component: {fileID: 455190}
   - component: {fileID: 19853416}
   - component: {fileID: 19966662}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24165,7 +24170,7 @@ GameObject:
   - component: {fileID: 498276}
   - component: {fileID: 19816780}
   - component: {fileID: 19991108}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28927,7 +28932,7 @@ GameObject:
   - component: {fileID: 425778}
   - component: {fileID: 19868690}
   - component: {fileID: 19991990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33689,7 +33694,7 @@ GameObject:
   - component: {fileID: 424652}
   - component: {fileID: 19881634}
   - component: {fileID: 19949684}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38451,7 +38456,7 @@ GameObject:
   - component: {fileID: 412032}
   - component: {fileID: 19842372}
   - component: {fileID: 19994004}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43202,6 +43207,66 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &2502376801609298836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1562619179132750377}
+  m_Layer: 7
+  m_Name: WeaponSpawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1562619179132750377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2502376801609298836}
+  m_LocalRotation: {x: 0, y: -0.258819, z: 0, w: 0.9659259}
+  m_LocalPosition: {x: 8, y: 0, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 473352}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -30, z: 0}
+--- !u!1 &3170751203496845713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7914798336461622202}
+  m_Layer: 7
+  m_Name: WeaponSpawn (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7914798336461622202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3170751203496845713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 473352}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7347215229598422447
 GameObject:
   m_ObjectHideFlags: 0
@@ -43211,7 +43276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3178731449801932443}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43225,10 +43290,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7347215229598422447}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -7}
+  m_LocalRotation: {x: 0, y: 0.2588191, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: -8, y: 0, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 473352}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}

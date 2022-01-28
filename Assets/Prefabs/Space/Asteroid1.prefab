@@ -91,21 +91,6 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: -1}
   speed: 50
   space: 0
---- !u!114 &5620455496009001950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019892705835154921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84bc0ab6d283d00408cfb621a41b58cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 7948615552424718202, guid: 642910edac9a52b44af15f2261d9c9b9, type: 3}
-  destroyOnDeath: 1
-  maxHealth: 10
 --- !u!114 &4251372271786381971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,4 +103,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1d764e02b6ce946a681d3f66a89f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
+  minFireTime: 0
+  maxFireTime: 0
   points: 100
+--- !u!114 &5620455496009001950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019892705835154921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84bc0ab6d283d00408cfb621a41b58cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPrefab: {fileID: 100004, guid: 33384af7b24a0f14cb7bbf3b795f7a2b, type: 3}
+  destroyOnDeath: 1
+  maxHealth: 10
