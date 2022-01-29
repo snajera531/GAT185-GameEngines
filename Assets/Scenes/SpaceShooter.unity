@@ -1301,7 +1301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 456646, guid: 85240cb408b344a4c830c41c36e22392, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 456646, guid: 85240cb408b344a4c830c41c36e22392, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1309,7 +1309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 456646, guid: 85240cb408b344a4c830c41c36e22392, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 456646, guid: 85240cb408b344a4c830c41c36e22392, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1603,6 +1603,7 @@ MonoBehaviour:
   minTime: 1
   maxTime: 3
   active: 0
+  timeModifier: 0
 --- !u!65 &1370319000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1614,7 +1615,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 200, y: 1, z: 40}
+  m_Size: {x: 250, y: 1, z: 40}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1496517911
 GameObject:
@@ -1678,6 +1679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 4085982696302320018, guid: 64ca1ec50ec5df449bc615a488c2446c, type: 3}
   playerSpawn: {fileID: 173862973}
+  spawnerBox: {fileID: 1370318999}
   scoreUI: {fileID: 110039854}
   livesUI: {fileID: 798899007}
   healthSlider: {fileID: 1901928795}
@@ -1986,7 +1988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 438232, guid: 671b04b68a73aed43974dd58a777e5e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 438232, guid: 671b04b68a73aed43974dd58a777e5e4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1994,7 +1996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 438232, guid: 671b04b68a73aed43974dd58a777e5e4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 600
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 438232, guid: 671b04b68a73aed43974dd58a777e5e4, type: 3}
       propertyPath: m_LocalRotation.w

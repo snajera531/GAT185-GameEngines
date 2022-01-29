@@ -23,7 +23,6 @@ public class Weapon : MonoBehaviour
             foreach(var t in spawnTransforms)
             {
                 Instantiate(projectilePrefab, t.position, t.rotation);
-
             }
         }
     }

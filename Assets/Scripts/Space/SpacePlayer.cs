@@ -16,7 +16,6 @@ public class SpacePlayer : MonoBehaviour, IDestructable
 
         //applying movement
         transform.Translate(direction * speed * Time.deltaTime);
-        //transform.position += direction * Time.deltaTime * speed;
 
         if (Input.GetButton(weaponType))
         {
@@ -30,6 +29,5 @@ public class SpacePlayer : MonoBehaviour, IDestructable
     {
         GameManager.Instance.PlayerHealth = 0;
         GameManager.Instance.OnPlayerDeath();
-        //GameManager.Instance.OnStopGame();
     }
 }

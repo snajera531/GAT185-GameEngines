@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
                 destructable.Destroyed();
             }
 
-            if(deathPrefab != null) Instantiate(deathPrefab, transform.position, transform.rotation);
+            if (deathPrefab != null) Instantiate(deathPrefab, transform.position, transform.rotation);
 
             if (destroyOnDeath) Destroy(gameObject);
         }
