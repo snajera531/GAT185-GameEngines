@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpacePlayer : MonoBehaviour, IDestructable
 {
     [Range(0, 100)] [Tooltip("speed of the player")] public float speed = 40;
-    [SerializeField] string weaponType;
+    [SerializeField] Weapon[] weapons;
+    [SerializeField] Damage damage;
 
     void Update()
     {
@@ -17,9 +18,13 @@ public class SpacePlayer : MonoBehaviour, IDestructable
         //applying movement
         transform.Translate(direction * speed * Time.deltaTime);
 
-        if (Input.GetButton(weaponType))
+        if (Input.GetButton("Fire2"))
         {
-            GetComponent<Weapon>().Fire();
+            weapons[1].Fire();
+        }
+        else if(Input.GetButton("Fire1"))
+        {
+            weapons[0].Fire();
         }
 
         GameManager.Instance.PlayerHealth = GetComponent<Health>().health;

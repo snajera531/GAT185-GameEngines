@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 192262, guid: 733322986724f0c4fbd9df9e1dd33e7c, type: 3}
       propertyPath: m_Name
-      value: Player Variant
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 192262, guid: 733322986724f0c4fbd9df9e1dd33e7c, type: 3}
       propertyPath: m_Layer
@@ -210,8 +210,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 5, z: 30}
-  m_Center: {x: 0, y: 0, z: -5}
+  m_Size: {x: 30, y: 5, z: 40}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &441900174429538270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPrefab: {fileID: 100004, guid: 33384af7b24a0f14cb7bbf3b795f7a2b, type: 3}
   destroyOnDeath: 1
-  maxHealth: 200
+  maxHealth: 400
 --- !u!114 &2836994355623736482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +257,23 @@ MonoBehaviour:
   - {fileID: 8281193346016270174}
   - {fileID: 3186447777766622612}
   fireRate: 0.25
+--- !u!114 &4180989730334705814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4085982696302320018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f47f126b4b700d49a45d237d1eeed53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5558707381850513991, guid: 6f9fdfe15bae5ce44b9a71bbc9efb56c, type: 3}
+  spawnTransforms:
+  - {fileID: 8281193346016270174}
+  - {fileID: 3186447777766622612}
+  fireRate: 0.5
 --- !u!114 &5415539392814320714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,4 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  weaponType: Fire1
+  weapons:
+  - {fileID: 3883048534438209582}
+  - {fileID: 4180989730334705814}
+  damage: {fileID: 2836994355623736482}

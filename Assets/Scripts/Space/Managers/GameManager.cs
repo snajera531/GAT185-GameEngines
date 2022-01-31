@@ -77,8 +77,8 @@ public class GameManager : Singleton<GameManager>
                 if(gameTimer > 5)
                 {
                     gameTimer = 5;
-                    spawnerBox.timeModifier -= 0.05f;
-                    spawnerBox.timeModifier = Mathf.Max(0.3f, spawnerBox.timeModifier);
+                    spawnerBox.timeModifier -= 0.01f;
+                    spawnerBox.timeModifier = Mathf.Max(0.5f, spawnerBox.timeModifier);
                 }
                 break;
             case State.PLAYER_DEAD:

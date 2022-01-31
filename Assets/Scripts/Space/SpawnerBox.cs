@@ -10,7 +10,7 @@ public class SpawnerBox : MonoBehaviour
     [SerializeField] float maxTime;
     [SerializeField] bool active = true;
 
-    public float timeModifier = 1;
+    public float timeModifier = 2;
     BoxCollider boxCollider;
     float timer;
 

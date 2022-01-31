@@ -5,6 +5,13 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     [SerializeField] float damage;
+    public float DamageVal {
+        get { return damage; }
+        set
+        {
+            damage = value;
+        }
+    }
 
     void OnTriggerEnter(Collider other)
     {
