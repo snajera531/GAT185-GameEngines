@@ -13,9 +13,13 @@ public class RollerCamera : MonoBehaviour
 
     void Update()
     {
+        yaw += Input.GetAxis("Mouse X") * sensitivity;
+        Quaternion qYaw = Quaternion.AngleAxis(yaw, Vector3.up);
         Quaternion qPitch = Quaternion.AngleAxis(pitch, Vector3.right);
+        Quaternion rotation = qPitch * qYaw;
         Vector3 offset = qPitch * Vector3.back * distance;
 
         transform.position = target.position + offset;
+        transform.rotation = Quaternion.LookRotation(-offset);
     }
 }
