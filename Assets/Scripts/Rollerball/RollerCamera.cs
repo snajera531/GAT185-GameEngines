@@ -5,7 +5,7 @@ using UnityEngine;
 public class RollerCamera : MonoBehaviour
 {
     public Transform target;
-    public float distance = 5;
+    public float distance = 4;
     public float pitch = 45;
     public float sensitivity = 1;
 
