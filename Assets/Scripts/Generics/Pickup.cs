@@ -8,9 +8,9 @@ public class Pickup : MonoBehaviour
     public float rate;
     public float spinRate;
 
-    Vector3 initialPosition;
-    float angle;
-    float time;
+    protected Vector3 initialPosition;
+    protected float angle;
+    protected float time;
 
     void Start()
     {

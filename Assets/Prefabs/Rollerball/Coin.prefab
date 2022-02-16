@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6054165097405450489}
   - component: {fileID: 6054165097405450491}
+  - component: {fileID: 8537667925772617002}
   - component: {fileID: 6054165097405450490}
   m_Layer: 0
   m_Name: Coin
@@ -48,7 +49,23 @@ MonoBehaviour:
   amplitude: 0.4
   rate: 4
   spinRate: 180
-  points: 0
+  points: 1
+--- !u!114 &8537667925772617002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6054165097405450492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84bc0ab6d283d00408cfb621a41b58cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPrefab: {fileID: 0}
+  destroyOnDeath: 1
+  maxHealth: 0
+  destroyRoot: 0
 --- !u!135 &6054165097405450490
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -128,6 +145,10 @@ PrefabInstance:
     - target: {fileID: 4015294399322974, guid: 33512a55346f56e4090c2acdc8fe4d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23056303936926450, guid: 33512a55346f56e4090c2acdc8fe4d78, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33512a55346f56e4090c2acdc8fe4d78, type: 3}

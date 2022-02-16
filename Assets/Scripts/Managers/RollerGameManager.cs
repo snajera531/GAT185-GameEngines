@@ -11,7 +11,8 @@ public class RollerGameManager : Singleton<RollerGameManager>
         PLAYER_START,
         GAME,
         PLAYER_DEAD,
-        GAME_OVER
+        GAME_OVER,
+        WIN
     }
 
     [SerializeField] GameObject playerPrefab;
@@ -24,6 +25,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
     [SerializeField] Slider healthSlider;
     [SerializeField] GameObject titleScreen;
     [SerializeField] GameObject gameOverUI;
+    [SerializeField] GameObject winUI;
 
     public float PlayerHealth { set { healthSlider.value = value; } }
 
@@ -37,6 +39,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
     State state = State.TITLE;
     float stateTimer = 0;
     float gameTime = 0;
+    int winningScore = 100;
 
     public float GameTime
     {
@@ -64,7 +67,8 @@ public class RollerGameManager : Singleton<RollerGameManager>
         set
         {
             score = value;
-            scoreUI.text = score.ToString();
+            scoreUI.text = score.ToString() + " / 5";
+            OnPlayerWin();
         }
     }
     
@@ -77,9 +81,11 @@ public class RollerGameManager : Singleton<RollerGameManager>
             case State.TITLE:
                 break;
             case State.PLAYER_START:
-                Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
+                transform.position = playerSpawn.position;
                 mainCamera.SetActive(false);
                 startGameEvent?.Invoke();
+
+                PlayerHealth = 200;
                 GameTime = 60;
 
                 state = State.GAME;
@@ -108,6 +114,14 @@ public class RollerGameManager : Singleton<RollerGameManager>
                     titleScreen.SetActive(true);
                 }
                 break;
+            case State.WIN:
+                if (stateTimer <= 0)
+                {
+                    state = State.TITLE;
+                    winUI.SetActive(false);
+                    titleScreen.SetActive(true);
+                }
+                break;
             default:
                 break;
         }
@@ -115,6 +129,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
 
     public void OnStartGame()
     {
+        Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
         state = State.PLAYER_START;
         Score = 0;
         Lives = 3;
@@ -130,7 +145,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
         stopGameEvent();
     }
 
-    public void OnPlayerDeath()
+    public void OnPlayerDeath(GameObject gameObject)
     {
         Lives--;
 
@@ -147,7 +162,16 @@ public class RollerGameManager : Singleton<RollerGameManager>
             stateTimer = 3;
         }
 
-        stopGameEvent();
+        stopGameEvent?.Invoke();
+    }
+
+    public void OnPlayerWin()
+    {
+        if(score == winningScore)
+        {
+            state = State.WIN;
+            stateTimer = 5;
+        }
     }
 }
 

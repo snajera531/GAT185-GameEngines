@@ -47,6 +47,6 @@ public class RollerPlayer : MonoBehaviour, IDestructable
 
     public void Destroyed()
     {
-        RollerGameManager.Instance.OnPlayerDeath();
+        RollerGameManager.Instance.OnPlayerDeath(transform.parent.gameObject);
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3038810727414614029}
   - component: {fileID: 3038810727414614028}
+  - component: {fileID: 5063615085090429451}
   - component: {fileID: 3038810727414614035}
   - component: {fileID: 3038810727414614031}
   - component: {fileID: 3038810727414614030}
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3038810727414614024}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 5679160559697912795}
   m_RootOrder: 0
@@ -50,8 +51,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxForce: 5
   jumpForce: 5
-  forceMode: 5
+  forceMode: 0
   viewTransform: {fileID: 7768681164847115714}
+--- !u!114 &5063615085090429451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3038810727414614024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a550535ab5b171408c81aea23889732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  oneTime: 1
 --- !u!114 &3038810727414614035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathPrefab: {fileID: 0}
-  destroyOnDeath: 1
+  destroyOnDeath: 0
   maxHealth: 200
   destroyRoot: 1
 --- !u!33 &3038810727414614031
@@ -124,7 +139,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3038810727414614024}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 652ee8036ab06044f911497b36e0d675, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -142,7 +157,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
