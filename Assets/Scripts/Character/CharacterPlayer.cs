@@ -53,8 +53,8 @@ public class CharacterPlayer : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), turnRate * Time.deltaTime);
         }
 
-        if (Input.GetButtonDown("Fire1")) animator.SetTrigger("Throw");
-        if (Input.GetButtonDown("Fire2")) animator.SetTrigger("Punch");
+        if (Input.GetButtonDown("Fire1")) animator.SetTrigger("Magic");
+        if (Input.GetButtonDown("Fire2")) animator.SetTrigger("Melee");
         if (Input.GetButtonDown("Fire3")) animator.SetBool("IsArmed", !animator.GetBool("IsArmed"));
 
         animator.SetFloat("Speed", (direction * speed).magnitude);
@@ -69,5 +69,19 @@ public class CharacterPlayer : MonoBehaviour
         GUI.color = Color.black;
         GUI.Label(new Rect(screen.x, Screen.height - screen.y, 300, 20), controller.velocity.ToString());
         GUI.Label(new Rect(screen.x, Screen.height - screen.y - 20, 300, 20), controller.isGrounded.ToString());
+    }
+
+    public void LeftFootSpawn(GameObject go)
+    {
+        Transform bone = animator.GetBoneTransform(HumanBodyBones.LeftFoot);
+
+        Instantiate(go, bone.position, bone.rotation);
+    }
+
+    public void RightFootSpawn(GameObject go)
+    {
+        Transform bone = animator.GetBoneTransform(HumanBodyBones.RightFoot);
+
+        Instantiate(go, bone.position, bone.rotation);
     }
 }

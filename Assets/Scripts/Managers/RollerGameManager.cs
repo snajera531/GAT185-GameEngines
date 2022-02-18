@@ -81,6 +81,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
             case State.TITLE:
                 break;
             case State.PLAYER_START:
+                Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
                 transform.position = playerSpawn.position;
                 mainCamera.SetActive(false);
                 startGameEvent?.Invoke();
@@ -129,7 +130,6 @@ public class RollerGameManager : Singleton<RollerGameManager>
 
     public void OnStartGame()
     {
-        Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
         state = State.PLAYER_START;
         Score = 0;
         Lives = 3;
@@ -162,6 +162,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
             stateTimer = 3;
         }
 
+        Destroy(gameObject);
         stopGameEvent?.Invoke();
     }
 
@@ -171,6 +172,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
         {
             state = State.WIN;
             stateTimer = 5;
+            winUI.SetActive(true);
         }
     }
 }
