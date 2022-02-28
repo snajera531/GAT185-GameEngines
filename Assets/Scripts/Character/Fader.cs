@@ -7,14 +7,14 @@ public class Fader : MonoBehaviour
     Material material;
     float alpha;
 
+    public bool IsDone { get; set; }
+
     void Start()
     {
         material = GetComponent<Renderer>().material;
         alpha = 0;
 
         StartCoroutine(FadeInRoutine());
-        StartCoroutine(Timer(2));
-        StartCoroutine(UpdateAI(5));
     }
 
     void Update()
@@ -22,18 +22,33 @@ public class Fader : MonoBehaviour
         //FadeIn();
     }
 
-    void FadeIn()
+    public void FadeIn()
     {
+        IsDone = false;
         alpha += Time.deltaTime;
         alpha = Mathf.Min(alpha, 1);
 
         Color color = material.color;
         color.a = alpha;
         material.color = color;
+        IsDone = true;
+    }
+    
+    public void FadeOut()
+    {
+        IsDone = false;
+        alpha += Time.deltaTime;
+        alpha = Mathf.Min(alpha, 1);
+
+        Color color = material.color;
+        color.a = alpha;
+        material.color = color;
+        IsDone = true;
     }
 
     IEnumerator FadeInRoutine()
     {
+        IsDone = false;
         while (alpha < 1)
         {
             alpha += Time.deltaTime;
@@ -45,6 +60,7 @@ public class Fader : MonoBehaviour
 
             yield return null;
         }
+        IsDone = true;
     }
 
     IEnumerator Timer(float time)

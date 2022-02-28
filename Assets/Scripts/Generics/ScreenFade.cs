@@ -11,6 +11,8 @@ public class ScreenFade : MonoBehaviour
     [SerializeField] Color endColor;
     [SerializeField] bool startOnAwake = true;
 
+    public bool IsDone { get; set; }
+    
     void Start()
     {
         if (startOnAwake)
@@ -28,12 +30,16 @@ public class ScreenFade : MonoBehaviour
 
     public void FadeIn()
 	{
+        IsDone = false;
         StartCoroutine(FadeRoutine(startColor, endColor, time));
+        IsDone = true;
     }
 
     public void FadeOut()
     {
+        IsDone = false;
         StartCoroutine(FadeRoutine(endColor, startColor, time));
+        IsDone = true;
     }
 
     IEnumerator FadeRoutine(Color color1, Color color2, float time)
