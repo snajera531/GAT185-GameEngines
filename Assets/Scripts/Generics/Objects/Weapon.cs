@@ -2,28 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Weapon : Item
 {
-    [SerializeField] GameObject projectilePrefab;
-    [SerializeField] Transform[] spawnTransforms;
-    [SerializeField] float fireRate;
+    [SerializeField] string activeAnimation;
+    [SerializeField] string actionAnimation;
+    [SerializeField] GameObject ammoPrefab;
+    [SerializeField] Transform spawnTransform;
 
-    float fireTimer = 0;
-
-    private void Update()
+    public override void Activate()
     {
-        fireTimer -= Time.deltaTime;
+        visual.SetActive(true);
+        if (!string.IsNullOrEmpty(activeAnimation)) animator.SetBool(activeAnimation, true);
+    }
+
+    public override void Deactivate()
+    {
+        visual.SetActive(false);
+        if (!string.IsNullOrEmpty(activeAnimation)) animator.SetBool(activeAnimation, false);
+    }
+
+    public override void Execute()
+    {
+        
+    }
+
+    public override void UpdateItem()
+    {
+        if (Input.GetButtonDown(input)) StartFire();
+        if (Input.GetButtonUp(input)) StopFire();
+    }
+
+    private void StartFire()
+    {
+        animator.SetBool(actionAnimation, true);
+    }
+
+    private void StopFire()
+    {
+        animator.SetBool(actionAnimation, false);
     }
 
     public void Fire()
     {
-        if (fireTimer <= 0)
-        { 
-            fireTimer = fireRate;
-            foreach(var t in spawnTransforms)
-            {
-                Instantiate(projectilePrefab, t.position, t.rotation);
-            }
-        }
+        Instantiate(ammoPrefab, spawnTransform.position, spawnTransform.rotation);
     }
+
 }

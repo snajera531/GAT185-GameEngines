@@ -20,11 +20,11 @@ public class SpacePlayer : MonoBehaviour, IDestructable
 
         if (Input.GetButton("Fire2"))
         {
-            weapons[1].Fire();
+            //weapons[1].Fire();
         }
         else if(Input.GetButton("Fire1"))
         {
-            weapons[0].Fire();
+            //weapons[0].Fire();
         }
 
         GameManager.Instance.PlayerHealth = GetComponent<Health>().health;
