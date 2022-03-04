@@ -34,4 +34,14 @@ public class Damage : MonoBehaviour
             health.Damage(damage);
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (!oneTime) return;
+
+        if (collision.gameObject.TryGetComponent<Health>(out Health health))
+        {
+            health.Damage(damage);
+        }
+    }
 }

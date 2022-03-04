@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour
 
     public void StartItem()
     {
-        if (ActiveItem.TryGetComponent<Weapon>(out Weapon weapon))
+        if (ActiveItem is Weapon weapon)
         {
             weapon.Fire();
         }
